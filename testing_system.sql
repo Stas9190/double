@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Авг 28 2019 г., 07:06
+-- Время создания: Авг 28 2019 г., 07:28
 -- Версия сервера: 5.7.18
 -- Версия PHP: 7.1.5
 
@@ -86,7 +86,7 @@ CREATE TABLE `current_state` (
   `file` varchar(255) NOT NULL,
   `status` int(11) NOT NULL DEFAULT '0',
   `time` varchar(255) NOT NULL,
-  `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -94,13 +94,13 @@ CREATE TABLE `current_state` (
 --
 
 INSERT INTO `current_state` (`id`, `id_user`, `file`, `status`, `time`, `datetime`) VALUES
-(6, 4, 'save/4_store', 1, '7180', '2019-07-15 08:43:56'),
-(9, 4, 'save/4_store', 1, '7180', '2019-07-15 08:53:29'),
-(10, 4, 'save/4_store', 1, '7200', '2019-07-15 08:54:05'),
-(11, 4, 'save/4_store', 1, '7200', '2019-07-15 08:55:26'),
-(14, 4, 'save/4_store1563189130', 1, '7160', '2019-07-15 14:12:10'),
-(15, 4, 'save/4_store1563189261', 1, '7160', '2019-07-15 14:14:21'),
-(16, 4, 'save/4_store1563189426', 0, '-25800', '2019-07-15 14:17:06');
+(6, 4, 'save/4_store', 1, '7180', '2019-07-15 05:43:56'),
+(9, 4, 'save/4_store', 1, '7180', '2019-07-15 05:53:29'),
+(10, 4, 'save/4_store', 1, '7200', '2019-07-15 05:54:05'),
+(11, 4, 'save/4_store', 1, '7200', '2019-07-15 05:55:26'),
+(14, 4, 'save/4_store1563189130', 1, '7160', '2019-07-15 11:12:10'),
+(15, 4, 'save/4_store1563189261', 1, '7160', '2019-07-15 11:14:21'),
+(16, 4, 'save/4_store1563189426', 0, '-25800', '2019-07-15 11:17:06');
 
 -- --------------------------------------------------------
 
@@ -279,7 +279,7 @@ CREATE TABLE `result` (
   `id_user` int(11) NOT NULL,
   `id_task` int(11) NOT NULL,
   `result` varchar(255) NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `result_formula` varchar(255) NOT NULL,
   `true_result` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -417,7 +417,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `login` varchar(255) DEFAULT NULL,
   `student_group` varchar(255) DEFAULT NULL,
-  `date_reg` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_reg` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `role` int(11) NOT NULL,
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -427,12 +427,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `fio`, `password`, `login`, `student_group`, `date_reg`, `role`, `status`) VALUES
-(1, 'Иванов Иван Иванович', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'admin', NULL, '2019-07-01 16:22:28', 0, 1),
-(4, 'Петров Сергей Викторович', '8cb2237d0679ca88db6464eac60da96345513964', '12345', 'IBM-40', '2019-07-01 16:22:28', 1, 1),
-(5, 'Гнатюк Максим Николаевич', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'MadMax', NULL, '2019-07-01 16:22:28', 2, 1),
-(6, 'Васильев Сергей Геннадьевич', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '12348', 'IBM-44', '2019-07-01 16:22:28', 1, 0),
-(7, 'Петров Сергей Александрович', '356a192b7913b04c54574d18c28d46e6395428ab', 'Sergey', NULL, '2019-07-01 16:22:28', 2, 1),
-(8, 'Иванова Валентина Петровна', '356a192b7913b04c54574d18c28d46e6395428ab', 'CrazyV', NULL, '2019-07-01 16:22:28', 2, 0);
+(1, 'Иванов Иван Иванович', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'admin', NULL, '2019-07-01 13:22:28', 0, 1),
+(4, 'Петров Сергей Викторович', '8cb2237d0679ca88db6464eac60da96345513964', '12345', 'IBM-40', '2019-07-01 13:22:28', 1, 1),
+(5, 'Гнатюк Максим Николаевич', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'MadMax', NULL, '2019-07-01 13:22:28', 2, 1),
+(6, 'Васильев Сергей Геннадьевич', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '12348', 'IBM-44', '2019-07-01 13:22:28', 1, 0),
+(7, 'Петров Сергей Александрович', '356a192b7913b04c54574d18c28d46e6395428ab', 'Sergey', NULL, '2019-07-01 13:22:28', 2, 1),
+(8, 'Иванова Валентина Петровна', '356a192b7913b04c54574d18c28d46e6395428ab', 'CrazyV', NULL, '2019-07-01 13:22:28', 2, 0);
 
 --
 -- Индексы сохранённых таблиц
